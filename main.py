@@ -3,14 +3,12 @@ from numpy import *
 dataset = genfromtxt('data.csv', delimiter=',')
 print dataset
 
-#starting data
-learningRate = 0.0001
-startingM = 1
+newM = 0
 
-deriv=0
-error=0
-newM=0
-a=0
+#Hyper Parameters
+learningRate = 0.0001
+trainingSteps = 1000
+startingM = 1
 
 def errorRate(data, m):
         a = 0.0
@@ -40,11 +38,10 @@ newM = startingM - deriv
 print("Error Rate after Delta 1: ")
 print(errorRate(dataset, newM))
 
-for i in xrange(1000):
+for i in xrange(trainingSteps):
         newM = newM - delta(dataset, newM)
-print("Error Rate after 1000 Trainings")
+print("Error Rate after " + str(trainingSteps) + " Trainings")
 print(errorRate(dataset, newM))
 print("New M")
 print(newM)
-        
 
