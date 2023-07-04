@@ -21,4 +21,4 @@ startingM = 1 <- Starting M value
 
 ## Author
 
-Sam Smallwood
+Samobot
